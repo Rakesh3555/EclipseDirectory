@@ -1,6 +1,6 @@
 package com.chainsys.day9;
 
-public class Payroll {
+public class PayRun {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
