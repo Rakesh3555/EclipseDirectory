@@ -6,7 +6,6 @@ public class PayRun {
 		// TODO Auto-generated method stub
 		EmployeeInfo emif = new EmployeeInfo();
 		emif.employeeDetails();
-		emif.payOut();
 		
 
 	}

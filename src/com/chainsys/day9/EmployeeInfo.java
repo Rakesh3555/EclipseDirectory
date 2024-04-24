@@ -3,6 +3,7 @@ import java.util.*;
 public class EmployeeInfo {
 
 
+	private static final float dedection = 0;
 	PayrollPojo pp = new PayrollPojo();
 	Scanner epi = new Scanner(System.in);
 
@@ -37,7 +38,7 @@ public class EmployeeInfo {
 
 			int payHour;
 			while(true) {
-				System.out.println("Enter Pay/hour :");
+				System.out.println("Enter Pay/Day :");
 				payHour = epi.nextInt();
 				if(payHour >= 0 ) {
 					pp.setPayHour(payHour);
@@ -59,7 +60,7 @@ public class EmployeeInfo {
 
 			int overTime;
 			while(true) {
-				System.out.println("Enter over time  :");
+				System.out.println("Enter overTime Pay/day  :");
 				overTime = epi.nextInt();
 				if(overTime >= 0 ) {
 					pp.setOverTime(overTime);
@@ -78,12 +79,15 @@ public class EmployeeInfo {
 					break;
 				}
 				System.out.println("Enter valid total over Time !");
-				
 			}
+			
+			
 		}else {
 			System.out.println("Invalid user");
 		}
-
+		
+		
+		
 
 
 	}
@@ -92,7 +96,31 @@ public class EmployeeInfo {
 
 		float grossPay = pp.getPayHour() * pp.getTotalHrWorked() + pp.getOverTime() * pp.getTotalOrTime();
 		pp.setGrossPay(grossPay);
-		//System.out.println(grossPay);
+		
+		double deduction = 0;
+		double netPay = 0;
+		if(grossPay < 25000) {
+			netPay=grossPay - 0;
+		}else if(grossPay > 25000 && grossPay < 50000) {
+			deduction = grossPay * .20;
+			netPay = grossPay - (grossPay * .20);
+			
+		}else if(grossPay > 50000 && grossPay < 100000) {
+			deduction = grossPay * .25;
+			netPay = grossPay - (grossPay * .25);
+			
+		}else if(grossPay > 100000 && grossPay < 150000) {
+			deduction = grossPay * .30;
+			netPay = grossPay -(grossPay * .30);
+			
+		}else if(grossPay > 150000){
+			deduction = grossPay * .35;
+			netPay = grossPay - (grossPay * .35);
+			
+		}else {
+			System.out.println("Error");
+		}
+		
 
 		System.out.println("***************Payroll***************");
 		System.out.println("Employee name : "+pp.getEmployeeName());
@@ -100,8 +128,10 @@ public class EmployeeInfo {
 		System.out.println("Totall Hours Worked :"+pp.getTotalHrWorked());
 		System.err.println("Over Time : "+pp.getOverTime());
 		System.out.println("Total over Time : "+pp.getTotalOrTime());
-		System.out.println("---------------Gross Pay---------------");
+		System.out.println("---------------Pay Scale---------------");
 		System.out.println("Gross Pay for "+pp.getEmployeeName()+" is "+grossPay);
+		System.out.println("Net Pay for "+pp.getEmployeeName()+" is "+netPay);
+		System.out.println("You have deduction of "+deduction);
 
 
 	}

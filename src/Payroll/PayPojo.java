@@ -9,6 +9,7 @@ public class PayPojo {
 	String vacation;
 	String holiday;
 	String totalHrs;
+    int totalOrTime;
 	public String getEmpName() {
 		return empName;
 	}
@@ -56,6 +57,23 @@ public class PayPojo {
 	}
 	public void setTotalHrs(String totalHrs) {
 		this.totalHrs = totalHrs;
+	}
+	public void setTotalOrTime(int totalOrTime) {
+		this.totalOrTime = totalOrTime;
+		// TODO Auto-generated method stub
+		
+	}
+	public void setPayHour(int payHour) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setTotalHrWorked(int totalHrWorked) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setOverTime(int overTime2) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

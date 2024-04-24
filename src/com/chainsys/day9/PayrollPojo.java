@@ -7,6 +7,13 @@ public class PayrollPojo {
 	int overTime;
 	int totalOrTime;
 	float grossPay;
+	float netPay;
+	public float getNetPay() {
+		return netPay;
+	}
+	public void setNetPay(float netPay) {
+		this.netPay = netPay;
+	}
 	public String getEmployeeName() {
 		return employeeName;
 	}
