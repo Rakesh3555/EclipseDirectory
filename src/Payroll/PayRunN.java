@@ -8,6 +8,8 @@ public class PayRunN {
 		//pra.payRollCalci();
 		UserCredPayroll ucp = new UserCredPayroll();
 		ucp.Registration();
+		
+		
 	}
 
 }

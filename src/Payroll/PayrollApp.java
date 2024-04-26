@@ -8,13 +8,14 @@ public class PayrollApp {
 	Scanner pps = new Scanner(System.in);
 	
 	public void payRollCalci(){
-	while(true) {
 		String VallogInUser = "[a-zA-Z]{4,16}";
 		System.out.println("Enter Username : ");
 		String userName = pps.next();
 		System.out.println("Enter Password :");
 		String passWord = pps.next();
-		if(userName.matches(VallogInUser) && passWord.matches(passWord) ) {
+	while(PayRollMethods.read(userName, passWord)) {
+	
+		if(PayRollMethods.read(userName, passWord)) {
 
 			System.out.println("Our Services \n 1. Payroll Calci \n 2. NetPay Calci ");
 			char pa = pps.next().charAt(0);
@@ -69,38 +70,88 @@ public class PayrollApp {
 			case '2':
 				double grossPayN;
 				double dedection = 0;
+				double pF;
+				double insurance;
+				double allowance;
 				System.out.println("Enter Your GrossPay :");
 				grossPayN = pps.nextDouble();
 				if(grossPayN < 25000) {
-					dedection = grossPayN - 0;
+					dedection = (grossPayN * 0.02);
 					pp.setDedection(dedection);
+					pF = dedection / 2;
+					pp.setpF(pF);
+					insurance = pF / 2;
+					pp.setInsurance(insurance);
+					allowance = insurance;
+					pp.setAllowance(allowance);
 				}else if(grossPayN > 25000) {
-					dedection = grossPayN - (grossPayN * 0.05);
+					dedection = (grossPayN * 0.05);
 					pp.setDedection(dedection);
+					pF = dedection / 2;
+					pp.setpF(pF);
+					insurance = pF / 2;
+					pp.setInsurance(insurance);
+					allowance = insurance;
+					pp.setAllowance(allowance);
 				}else if(grossPayN > 50000) {
-					dedection = grossPayN - (grossPayN * 0.08);
+					dedection = (grossPayN * 0.08);
 					pp.setDedection(dedection);
+					pF = dedection / 2;
+					pp.setpF(pF);
+					insurance = pF / 2;
+					pp.setInsurance(insurance);
+					allowance = insurance;
+					pp.setAllowance(allowance);
 				}else if(grossPayN > 100000) {
-					dedection = grossPayN - (grossPayN * 0.10);
+					dedection = (grossPayN * 0.1);
 					pp.setDedection(dedection);
+					pF = dedection / 2;
+					pp.setpF(pF);
+					insurance = pF / 2;
+					pp.setInsurance(insurance);
+					allowance = insurance;
+					pp.setAllowance(allowance);
 				}else if(grossPayN > 150000) {
-					dedection = grossPayN - (grossPayN * 0.13);
+					dedection = (grossPayN * 0.13);
 					pp.setDedection(dedection);
+					pF = dedection / 2;
+					pp.setpF(pF);
+					insurance = dedection / 3;
+					pp.setInsurance(insurance);
+					allowance = dedection / 4;
+					pp.setAllowance(allowance);
 				}else if(grossPayN > 200000) {
-					dedection = grossPayN - (grossPayN * 0.20);
+					dedection = (grossPayN * 0.20);
 					pp.setDedection(dedection);
-					
+					pF = dedection / 2;
+					pp.setpF(pF);
+					insurance = pF / 2;
+					pp.setInsurance(insurance);
+					allowance = insurance;
+					pp.setAllowance(allowance);
 				}else {
 					System.out.println("Invalid entery");
 				}
 				netPayOut();
-				
+				return;
+			
 			}
-			break;
-		}else {
-			System.out.println("Invalid user");
+			
+			
 		}
+		else {
+			System.out.println("Invalid user");
+			
+		}
+	
+		
 	}
+	
+		while(!PayRollMethods.read(userName, passWord))
+		{
+			payRollCalci();
+		}
+	
 }
 	    	public void grossPayOutN() {
 	    		float GrossPay = pp.getPayHour() * pp.getTotalHrWorked() + pp.getOverTime() * pp.getTotalOrTime();
@@ -109,6 +160,11 @@ public class PayrollApp {
 	    	}
 	    	
 	    	public void netPayOut() {
-	    		System.out.println(pp.getDedection());
+	    		
+	    		System.out.println("Provident Fund(PF) :"+pp.getpF());
+	    		System.out.println("Insurance amount :"+pp.getInsurance());
+	    		System.out.println("Allowance :"+pp.getAllowance());
+	    		System.out.println("------------------");
+	    		System.out.println("Total dedection :"+pp.getDedection());
 	    	}
 }

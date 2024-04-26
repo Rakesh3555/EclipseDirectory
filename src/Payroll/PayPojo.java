@@ -6,6 +6,28 @@ public class PayPojo {
 	int overTime;
 	int totalOrTime;
 	double dedection;
+	double pF;
+	double insurance;
+	double allowance;
+	public double getpF() {
+		return pF;
+	}
+	public void setpF(double pF) {
+		this.pF = pF;
+	}
+	public double getInsurance() {
+		return insurance;
+	}
+	public void setInsurance(double insurance) {
+		this.insurance = insurance;
+	}
+	public double getAllowance() {
+		return allowance;
+	}
+	public void setAllowance(double allowance) {
+		this.allowance = allowance;
+	}
+	
 	public double getDedection() {
 		return dedection;
 	}

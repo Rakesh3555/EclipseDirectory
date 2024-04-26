@@ -14,8 +14,8 @@ public class UserCredPayroll {
 	
 	public void Registration() {
 		System.out.println("Log-In Portal: ");
-		System.out.println("1. Log-in \n 2. Sign-up ");
-		
+		System.out.println("1. Log-in \n2. Sign-up ");
+		System.out.println("If you have an account Log-in or choose 2 to Sign-up.");
 		char up = uc.next().charAt(0);
 		switch(up) {
 		case '1':
@@ -25,56 +25,61 @@ public class UserCredPayroll {
 		case '2':
 			while(true) {
 				String gMail;
-				String gMailVal = "[a-zA-Z@.]{4,16}";
+				String gMailVal = "[a-z@.]{4,16}";
 				System.out.println("Enter e-mailId : ");
 				gMail = uc.next();
 				if(gMail.matches(gMailVal)){
-					String mailOtp;
+					String mailOtp="";
 					String mailOtpVal = "[0-9]{4}";
-					while(true) {
+					while(!mailOtp.matches(mailOtpVal)) {
 						System.out.println("Enter otp : ");
 						mailOtp = uc.next();
 						if(mailOtp.matches(mailOtpVal)) {
-							String userName;
+							String userName="";
 							String userNameVal = "[a-zA-Z]{4,16}";
-							while(true) {
-								System.out.println("Enter username : ");
+							while(!userName.matches(userNameVal)) {
+								System.out.println("Enter username1 : ");
 								userName = uc.next();
 								if(userName.matches(userNameVal)) {
-									String userPass;
+									String userPass="";
 									String userPassVal = "[a-zA-Z0-9]{4,16}";
-									while(true) {
-										System.out.println("Enter your password :");
+									while(!userPass.matches(userPassVal)) {
+										System.out.println("Enter your password1 :");
 										userPass = uc.next();
 										if(userPass.matches(userPassVal)) {
-											String reUserPass;
-											while(true) {
+											String reUserPass="";
+											while(!reUserPass.equals(userPass)) {
 												System.out.println("Re-enter password : ");
 												reUserPass = uc.next();
 												if(reUserPass.equals(userPass)) {
 													System.out.println("Sign-up Successfull !");
-													pra.payRollCalci();
+													prm.write(userName, reUserPass);
+													
 													break;
 												}
-												prm.write(userName, reUserPass);
+												
 											}
 
 										}
+									
 									}
 									
 								}
-								
+	
+							
 							}
 						}
 
 					}
 				}
-			
-				}
-			
-
+				break;
 			}
+			
+			pra.payRollCalci();
+	}
+		
+		
 		
 		}
-
+	
 }
