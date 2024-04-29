@@ -2,13 +2,11 @@ package Payroll;
 
 import java.util.Scanner;
 
-import javax.swing.text.html.HTMLDocument.HTMLReader.ParagraphAction;
-
 public class UserCredPayroll {
 	
 	PayPojo pp = new PayPojo();
 	Scanner uc = new Scanner(System.in);
-	PayrollApp pra = new PayrollApp();
+	 DepartPaySel dp=new  DepartPaySel();
 	PayRollMethods prm = new PayRollMethods();
 	String userPass;
 	
@@ -19,7 +17,7 @@ public class UserCredPayroll {
 		char up = uc.next().charAt(0);
 		switch(up) {
 		case '1':
-			pra.payRollCalci();
+			dp.department();
 			break;
 		
 		case '2':
@@ -75,7 +73,8 @@ public class UserCredPayroll {
 				break;
 			}
 			
-			pra.payRollCalci();
+			dp.department();
+
 	}
 		
 		

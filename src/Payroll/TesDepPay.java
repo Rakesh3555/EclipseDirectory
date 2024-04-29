@@ -2,12 +2,12 @@ package Payroll;
 
 import java.util.*;
 
-public class PayrollApp {
+public class TesDepPay{
 
 	PayPojo pp = new PayPojo();
 	Scanner pps = new Scanner(System.in);
 	
-	public void payRollCalci(){
+	public void tesDepPay(){
 		String VallogInUser = "[a-zA-Z]{4,16}";
 		System.out.println("Enter Username : ");
 		String userName = pps.next();
@@ -21,16 +21,14 @@ public class PayrollApp {
 			char pa = pps.next().charAt(0);
 			switch(pa) {
 			case'1':
-				int payHour;
-				while(true) {
-					System.out.println("Enter Pay/Day :");
-					payHour = pps.nextInt();
-					if(payHour >= 0 ) {
-						pp.setPayHour(payHour);
-						break;
-					}
-					System.out.println("Enter valid pay Hour !");
-				}
+				int payHour = 3000 ;
+				/*
+				 * while(true) { System.out.println("Enter Pay/Day :"); payHour = pps.nextInt();
+				 * if(payHour >= 0 ) {
+				 * 
+				 * break; } System.out.println("Enter valid pay Hour !"); }
+				 */
+				pp.setPayHour(payHour);
 
 				int totalHrWorked;
 				while(true) {
@@ -43,16 +41,14 @@ public class PayrollApp {
 					System.out.println("Enter valid totalHrWorked !");
 				}
 
-				int overTime;
-				while(true) {
-					System.out.println("Enter overTime Pay/day  :");
-					overTime = pps.nextInt();
-					if(overTime >= 0 ) {
-						pp.setOverTime(overTime);
-						break;
-					}
-					System.out.println("Enter valid over Time !");
-				}
+				int overTime = 1500;
+				/*
+				 * while(true) { System.out.println("Enter overTime Pay/day  :"); overTime =
+				 * pps.nextInt(); if(overTime >= 0 ) {
+				 * 
+				 * break; } System.out.println("Enter valid over Time !"); }
+				 */
+				pp.setOverTime(overTime);
 
 				int totalOrTime;
 				while(true) {
@@ -149,7 +145,7 @@ public class PayrollApp {
 	
 		while(!PayRollMethods.read(userName, passWord))
 		{
-			payRollCalci();
+			tesDepPay();
 		}
 	
 }
