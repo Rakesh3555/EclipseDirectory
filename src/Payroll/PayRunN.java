@@ -7,9 +7,7 @@ public class PayRunN {
 		//PayrollApp pra = new PayrollApp();
 		//pra.payRollCalci();
 		UserCredPayroll ucp = new UserCredPayroll();
-		ucp.Registration();
-		
-		
+		ucp.Registration();	
 	}
 
 }
