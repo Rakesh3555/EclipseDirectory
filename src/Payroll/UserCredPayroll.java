@@ -35,6 +35,7 @@ public class UserCredPayroll {
 						if(mailOtp.matches(mailOtpVal)) {
 							String userName="";
 							String userNameVal = "[a-zA-Z]{4,16}";
+							pp.setUserName1(userName);
 							while(!userName.matches(userNameVal)) {
 								System.out.println("Enter username1 : ");
 								userName = uc.next();

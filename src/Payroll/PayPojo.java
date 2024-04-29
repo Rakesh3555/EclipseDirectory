@@ -1,6 +1,13 @@
 package Payroll;
 
 public class PayPojo {
+	String userName;
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 	int payHour;
 	int totalHrWorked;
 	int overTime;
@@ -9,6 +16,13 @@ public class PayPojo {
 	double pF;
 	double insurance;
 	double allowance;
+	String userName1;
+	public String getUserName1() {
+		return userName1;
+	}
+	public void setUserName1(String userName1) {
+		this.userName1 = userName1;
+	}
 	public double getpF() {
 		return pF;
 	}
