@@ -152,11 +152,13 @@ public class TesDepPay{
 	    	public void grossPayOutN() {
 	    		float GrossPay = pp.getPayHour() * pp.getTotalHrWorked() + pp.getOverTime() * pp.getTotalOrTime();
 	    		System.out.println("Your GrossPay : "+GrossPay);
-	    		
+	    		pp.setGrossPayCalci(GrossPay);
 	    	}
 	    	
 	    	public void netPayOut() {
-	    		
+	    		double netPay = pp.getGrossPayCalci()-pp.getDedection();
+	    		pp.setNetPayCalci(netPay);
+
 	    		System.out.println("Provident Fund(PF) :"+pp.getpF());
 	    		System.out.println("Insurance amount :"+pp.getInsurance());
 	    		System.out.println("Allowance :"+pp.getAllowance());

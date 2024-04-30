@@ -1,13 +1,15 @@
+
 package Payroll;
 
 public class PayRunN {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void main(String[] args) { // TODO Auto-generated method stub
 		//PayrollApp pra = new PayrollApp();
-		//pra.payRollCalci();
+		//pra.payRollCalci(); 
 		UserCredPayroll ucp = new UserCredPayroll();
-		ucp.Registration();	
-	}
+		ViewPay vp = new ViewPay();
+		ucp.Registration();
+		vp.yourPaySlip();
 
+	}
 }

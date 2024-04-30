@@ -11,12 +11,33 @@ public class PayPojo {
 	int payHour;
 	int totalHrWorked;
 	int overTime;
+	double netPayCalci;
+	public double getNetPayCalci() {
+		return netPayCalci;
+	}
+	public void setNetPayCalci(double netPayCalci) {
+		this.netPayCalci = netPayCalci;
+	}
+	public float getGrossPayCalci() {
+		return grossPayCalci;
+	}
+	public void setGrossPayCalci(float grossPayCalci) {
+		this.grossPayCalci = grossPayCalci;
+	}
 	int totalOrTime;
 	double dedection;
 	double pF;
 	double insurance;
 	double allowance;
 	String userName1;
+	String department;
+	float grossPayCalci;
+	public String getDepartment() {
+		return department;
+	}
+	public void setDepartment(String department) {
+		this.department = department;
+	}
 	public String getUserName1() {
 		return userName1;
 	}

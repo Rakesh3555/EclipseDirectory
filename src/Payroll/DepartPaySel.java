@@ -8,6 +8,7 @@ public class DepartPaySel {
 	TesDepPay pra = new TesDepPay();
 	DevDep dd = new DevDep();
 	SupDep sd = new SupDep();
+	PayPojo pp = new PayPojo();
 	
 	public void department(){
 		
@@ -16,12 +17,15 @@ public class DepartPaySel {
 		char dc = dps.next().charAt(0);
 		switch(dc) {
 		case '1':
+			pp.setDepartment("developer");
 			dd.devDepPay();
 			break;
 		case '2':
+			pp.setDepartment("testing");
 			pra.tesDepPay();
 			break;
 		case '3':
+			pp.setDepartment("support");
 			sd.supDepPay();
 			break;
 		}
