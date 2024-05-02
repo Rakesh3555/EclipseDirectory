@@ -8,24 +8,25 @@ public class DepartPaySel {
 	TesDepPay pra = new TesDepPay();
 	DevDep dd = new DevDep();
 	SupDep sd = new SupDep();
-	PayPojo pp = new PayPojo();
 	
-	public void department(){
+	public void department(PayPojo p){
 		
 		System.out.println("Choose your Department :");
 		System.out.println("1.Developer \n 2.Testing \n 3.Support ");
 		char dc = dps.next().charAt(0);
 		switch(dc) {
 		case '1':
-			pp.setDepartment("developer");
-			dd.devDepPay();
+			p.setDepartment("developer");
+			dd.devDepPay(p);
 			break;
 		case '2':
-			pp.setDepartment("testing");
+			//System.out.println("----");
+			p.setDepartment("testing");
 			pra.tesDepPay();
+			
 			break;
 		case '3':
-			pp.setDepartment("support");
+			p.setDepartment("support");
 			sd.supDepPay();
 			break;
 		}

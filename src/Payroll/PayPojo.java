@@ -2,6 +2,20 @@ package Payroll;
 
 public class PayPojo {
 	String userName;
+	String mailId;
+	String password;
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getMailId() {
+		return mailId;
+	}
+	public void setMailId(String mailId) {
+		this.mailId = mailId;
+	}
 	public String getUserName() {
 		return userName;
 	}

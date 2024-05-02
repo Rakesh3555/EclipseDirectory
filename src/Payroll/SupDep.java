@@ -10,8 +10,10 @@ public class SupDep {
 		String VallogInUser = "[a-zA-Z]{4,16}";
 		System.out.println("Enter Username : ");
 		String userName = pps.next();
+		pp.setUserName(userName);
 		System.out.println("Enter Password :");
 		String passWord = pps.next();
+		
 	while(PayRollMethods.read(userName, passWord)) {
 	
 		if(PayRollMethods.read(userName, passWord)) {

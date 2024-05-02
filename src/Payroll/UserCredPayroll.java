@@ -4,20 +4,19 @@ import java.util.Scanner;
 
 public class UserCredPayroll {
 	
-	PayPojo pp = new PayPojo();
 	Scanner uc = new Scanner(System.in);
 	 DepartPaySel dp=new  DepartPaySel();
 	PayRollMethods prm = new PayRollMethods();
 	String userPass;
 	
-	public void Registration() {
+	public void Registration(PayPojo p) {
 		System.out.println("Log-In Portal: ");
 		System.out.println("1. Log-in \n2. Sign-up ");
 		System.out.println("If you have an account Log-in or choose 2 to Sign-up.");
 		char up = uc.next().charAt(0);
 		switch(up) {
 		case '1':
-			dp.department();
+			dp.department(p);
 			break;
 		
 		case '2':
@@ -26,6 +25,7 @@ public class UserCredPayroll {
 				String gMailVal = "[a-z@.]{4,16}";
 				System.out.println("Enter e-mailId : ");
 				gMail = uc.next();
+				p.setMailId(gMail);
 				if(gMail.matches(gMailVal)){
 					String mailOtp="";
 					String mailOtpVal = "[0-9]{4}";
@@ -35,15 +35,14 @@ public class UserCredPayroll {
 						if(mailOtp.matches(mailOtpVal)) {
 							String userName="";
 							String userNameVal = "[a-zA-Z]{4,16}";
-							pp.setUserName1(userName);
 							while(!userName.matches(userNameVal)) {
-								System.out.println("Enter username1 : ");
+								System.out.println("Enter username : ");
 								userName = uc.next();
 								if(userName.matches(userNameVal)) {
 									String userPass="";
 									String userPassVal = "[a-zA-Z0-9]{4,16}";
 									while(!userPass.matches(userPassVal)) {
-										System.out.println("Enter your password1 :");
+										System.out.println("Enter your password :");
 										userPass = uc.next();
 										if(userPass.matches(userPassVal)) {
 											String reUserPass="";
@@ -74,7 +73,7 @@ public class UserCredPayroll {
 				break;
 			}
 			
-			dp.department();
+			dp.department(p);
 
 	}
 		

@@ -2,7 +2,7 @@ package Payroll;
 
 public interface Payslip {
 	
-	public void yourPaySlip();
+	public void yourPaySlip(PayPojo pp);
 
 	
 }
