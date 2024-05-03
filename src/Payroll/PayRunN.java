@@ -15,12 +15,10 @@ public class PayRunN {
 		ViewPay vp = new ViewPay();
 		payRollDb prd = new payRollDb();
 		ucp.Registration(p);
-		prd.payRollData(pp);
-		DevDep dd = new DevDep();
-		dd.devDepPay(p);
+//		prd.payRollData(pp);
+		 DevDep dd = new DevDep(); 
+		 dd.devDepPay(p);
     	vp.yourPaySlip(pp);
-		
-		
 		prd.payRollData(p);
 		
 

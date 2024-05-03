@@ -29,55 +29,81 @@ public class UserCredPayroll {
 				if(gMail.matches(gMailVal)){
 					String mailOtp="";
 					String mailOtpVal = "[0-9]{4}";
-					while(!mailOtp.matches(mailOtpVal)) {
-						System.out.println("Enter otp : ");
+					System.out.println("Enter otp : ");
+					mailOtp = uc.next();
+					
+					while(mailOtp.length()!=4)
+					{
+						System.err.println("Invalid otp\nenter again :");
 						mailOtp = uc.next();
-						if(mailOtp.matches(mailOtpVal)) {
+					}
+					while(mailOtp.length()==4) {
+						
 							String userName="";
 							String userNameVal = "[a-zA-Z]{4,16}";
-							while(!userName.matches(userNameVal)) {
-								System.out.println("Enter username : ");
+							System.out.println("Enter username  : ");
+							userName = uc.next();
+							
+							while(!userName.matches(userNameVal))
+							{
+								System.err.println("Invalid Data\nenter it again: ");
 								userName = uc.next();
-								if(userName.matches(userNameVal)) {
+							}
+							while(userName.matches(userNameVal)) {
+								
 									String userPass="";
 									String userPassVal = "[a-zA-Z0-9]{4,16}";
-									while(!userPass.matches(userPassVal)) {
-										System.out.println("Enter your password :");
+									System.out.println("Enter your password :");
+									userPass = uc.next();
+									while(!userPass.matches(userPassVal)) 
+									{
+										System.err.println("Invalid Data\nenter it again :");
 										userPass = uc.next();
-										if(userPass.matches(userPassVal)) {
+									}
+									while(userPass.matches(userPassVal)) {
 											String reUserPass="";
-											while(!reUserPass.equals(userPass)) {
-												System.out.println("Re-enter password : ");
+											System.out.println("Re-enter password : ");
+											reUserPass = uc.next();
+											while(!reUserPass.equals(userPass)) 
+											{
+												System.err.println("Invalid data\nenter it again :");
 												reUserPass = uc.next();
-												if(reUserPass.equals(userPass)) {
+											}	
+											while(reUserPass.equals(userPass)) {
 													System.out.println("Sign-up Successfull !");
 													prm.write(userName, reUserPass);
 													
-													break;
-												}
 												
+												
+											break;	
 											}
-
-										}
-									
+											
+										
+										break;
 									}
 									
-								}
+								
 	
-							
+								break;
 							}
-						}
-
+							break;
+						
+						
 					}
+					break;
 				}
 				break;
+				
 			}
 			
-			dp.department(p);
-
+			
+			
+		
+break;
 	}
 		
 		
+	
 		
 		}
 	
