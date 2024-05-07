@@ -1,8 +1,5 @@
-package Payroll;
-
-public interface Payslip {
-	
-	public void yourPaySlip(PayPojo pp);
-
-	
-}
+//package Payroll;
+//
+//public interface Payslip {
+//	public void yourPaySlip(PayPojo pp);
+//}
